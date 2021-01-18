@@ -1,0 +1,16 @@
+# This is a comment, you should ignore it
+# The firewall should allow all rules that appear in this ruleset
+src-ip=253.145.84.201/32, dst-ip=  189.112.138.228/32,src-port=  53-53,dst-port=  0-65535 
+src-ip= 255.174.107.144/32  ,dst-ip  =191.91.51.33/32,src-port=25-25,dst-port=0-65535 # Comments can appear at the end of the lines
+
+
+# We also support empty lines
+
+
+src-ip =254.78.247.77/32,dst-ip =191.239.80.24/32,src-port =123-123,dst-port =0- 65535 # Hello :)
+src-ip   =251.117.126.87/32,dst-ip=185.106.148.74/32,src-port=25-25,dst-port=0-65535 
+src-ip=248.3.249.77/32,dst-ip= 185.190.142.133/32, src-port=  53-53,dst-port= 0-  65535 
+
+# You should parse these lines using Bash and CLI commands.
+# Hint: use sed,awk,grep,head,tail,cat 
+# Easy peasy!
