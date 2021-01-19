@@ -5,9 +5,9 @@
 #define MAX_PORT 65535
 
 
-Port::Port(String pattern): Field( pattern , PORT){}
 
 
+Port::Port(String pattern):Field(pattern,PORT){}
 
 bool Port::set_value(String val){
 
@@ -40,10 +40,9 @@ bool Port::set_value(String val){
 	return true;
 }
 
-bool match_value(String val) {
 
-	int port = val.to_integer();
-	return ( ( this->range[0]) <= port) 
-						&& (port <= (this->range[1])); 
+bool Port::match_value(String val) const {
+    int port = val.to_integer();
+    return ( ( this->range[0]) <= port)
+           && (port <= (this->range[1]));
 }
-

@@ -5,21 +5,23 @@
 #define WORD_SIZE 32
 
 
-IP::IP(String pattern):Field(pattern, IP){}
 
-bool IP::set_value(String val){
+Ip::Ip(String pattern):Field(pattern,IP) {}
+
+bool Ip::set_value(String val){
 
 	String* temp;
 	size_t num_of_stirngs=0;
 
 	val.split('/' , &temp, &size_t );
-	/*** check if return number of new strings is as expected
+
+
+	/*** checking if return number of new strings is as expected
 	and deletes memory when num is not zeor  ***/
 	if( num_of_stirngs != 2 ){
 		if( !num_of_stirngs ){
 			delete[] temp;
 		}
-
 		return false;
 	}
 
@@ -42,11 +44,14 @@ bool IP::set_value(String val){
 
 }
 
-book match_value(String val){
+bool I
 
-	unsigned int ip = val.to_integer();
-	if(ip < (this->low) || ip > (this->high)) {
-		return false;
-	}
-	return true;
+bool Ip::match_value(String val) const {
+
+    unsigned int ip = val.to_integer();
+    if(ip < (this->low) || ip > (this->high)) {
+        return false;
+    }
+    return true;
 }
+
