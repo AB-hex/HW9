@@ -13,7 +13,7 @@ bool Ip::set_value(String val){
 	String* temp;
 	size_t num_of_stirngs=0;
 
-	val.split('/' , &temp, &size_t );
+	val.split("/" , &temp, &num_of_stirngs );
 
 
 	/*** checking if return number of new strings is as expected
@@ -27,16 +27,16 @@ bool Ip::set_value(String val){
 
 	
 	int ip = temp[0].to_integer();
-	int mask_lngth = temp[1].to_integer; //num of MSB bits mask
+	int maskLngth = temp[1].to_integer(); //num of MSB bits mask
 
-	if( mask_lngth < 0 || mask_lngth > WORD_SIZE ){
+	if(maskLngth < 0 || maskLngth > WORD_SIZE ){
 		delete[] temp;
 		return false;
 	}
 
-	unsigned int mask = 1<<(WORD_SIZE - mask_lngth) - 1 ;
+	unsigned int mask = 1<<((WORD_SIZE - maskLngth) - 1) ;
 	this->low = ip & (~mask);
-	this->hight = ip | mask;
+	this->high = ip | mask;
 
 
 	delete[] temp;

@@ -34,7 +34,7 @@ bool Field::set_value(String val){
 	if(this->type == IP){
 		return ((Ip*)this)->set_value(val);
 	}
-	else (this->type == PORT){
+	else if (this->type == PORT){
 		return ((Port*)this)->set_value(val);
 	}
 	return false;
@@ -44,7 +44,7 @@ bool Field::match_value(String val) const {
     if(this->type == IP){
         return ((Ip*)this)->match_value(val);
     }
-    else (this->type == PORT){
+    else if (this->type == PORT){
         return ((Port*)this)->match_value(val);
     }
     return false;

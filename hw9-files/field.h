@@ -22,7 +22,7 @@ public:
 
     field_type get_type() const;
 
-    bool set_value(String val);
+    virtual bool set_value(String val);
 
     bool match_value(String val) const;
 
