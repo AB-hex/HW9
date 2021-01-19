@@ -29,7 +29,7 @@ bool Ip::set_value(String val){
 	int ip = temp[0].to_integer();
 	int mask_lngth = temp[1].to_integer; //num of MSB bits mask
 
-	if( mask < 0 || mask > WORD_SIZE ){
+	if( mask_lngth < 0 || mask_lngth > WORD_SIZE ){
 		delete[] temp;
 		return false;
 	}
@@ -40,7 +40,7 @@ bool Ip::set_value(String val){
 
 
 	delete[] temp;
-	return TRUE;
+	return true;
 
 }
 
