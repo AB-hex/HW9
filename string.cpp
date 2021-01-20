@@ -152,7 +152,6 @@ void String::split(const char *delimiters, String **output,
 
     }
   *output=new_out;
-    //output[1]->data;
 
 
 
@@ -199,15 +198,17 @@ void String::split(const char *delimiters, String **output,
 
 
 
-    /*create all other strins expect the last one*/
+    /*create all other strings expect the last one*/
     for(int i=0;i<counter;i++){
         int word_len=strings_locations[i][1]-strings_locations[i][0]+1;
         char tmp_string[word_len+1];
+
         for(int j=strings_locations[i][0];j<=strings_locations[i][1];j++){
             tmp_string[j-strings_locations[i][0]]=this->data[j];
         }
+        //tmp_string[word_len]= (char) '/0';
         String tmp(tmp_string);
-        *(output)[i]=tmp;
+        (*output)[i]=tmp;
     }
 
 
