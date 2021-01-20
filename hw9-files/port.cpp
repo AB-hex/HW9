@@ -10,11 +10,11 @@
 Port::Port(String pattern):Field(pattern,PORT){}
 
 bool Port::set_value(String val){
-
+///example val = PRT1-PRT2
 	String *temp;
 	size_t size = 0;
 
-	val.split('-', &temp, &size);
+	val.split("-", &temp, &size);
 	if(size != 2){
 		if( !size ){
 			delete[] temp;
@@ -42,7 +42,9 @@ bool Port::set_value(String val){
 
 
 bool Port::match_value(String val) const {
+    ///exmple val = port
     int port = val.to_integer();
     return ( ( this->range[0]) <= port)
-           && (port <= (this->range[1]));
+                 && (port <= (this->range[1]) );
+
 }

@@ -9,17 +9,17 @@
 Ip::Ip(String pattern):Field(pattern,IP) {}
 
 bool Ip::set_value(String val){
-
+///exmp: val = XXX.XXX.XXX.XXX/8
 	String* temp;
-	size_t num_of_stirngs=0;
+	size_t numOfStirngs=0;
 
-	val.split("/" , &temp, &num_of_stirngs );
+	val.split("/" , &temp, &numOfStirngs );
 
 
 	/*** checking if return number of new strings is as expected
-	and deletes memory when num is not zeor  ***/
-	if( num_of_stirngs != 2 ){
-		if( !num_of_stirngs ){
+	and deletes memory when num is not zero  ***/
+	if(numOfStirngs != 2 ){
+		if( !numOfStirngs ){
 			delete[] temp;
 		}
 		return false;
@@ -44,10 +44,9 @@ bool Ip::set_value(String val){
 
 }
 
-bool I
 
 bool Ip::match_value(String val) const {
-
+///exmp: val = XXX.XXX.XXX.XXX
     unsigned int ip = val.to_integer();
     if(ip < (this->low) || ip > (this->high)) {
         return false;
