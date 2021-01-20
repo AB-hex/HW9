@@ -3,6 +3,8 @@
 
 #include "port.h"
 #define MAX_PORT 65535
+#define START 0
+#define END 1
 
 
 
@@ -34,8 +36,8 @@ bool Port::set_value(String val){
 		return false;
 	}
 
-	this->range[0] = val0;
-	this->range[1] = val1;
+	this->range[START] = val0;
+	this->range[END] = val1;
 
 	return true;
 }
@@ -44,7 +46,7 @@ bool Port::set_value(String val){
 bool Port::match_value(String val) const {
     ///exmple val = port
     int port = val.to_integer();
-    return ( ( this->range[0]) <= port)
-                 && (port <= (this->range[1]) );
+    return ( ( this->range[START]) <= port)
+                 && (port <= (this->range[END]) );
 
 }
