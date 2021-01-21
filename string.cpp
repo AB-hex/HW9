@@ -24,11 +24,14 @@ String::String(const String &str) {
         return;
     }
     this->length=str.length;
-    char *new_data = new char[strlen(str.data)+1];
+    this->data = new char[strlen(str.data)+1];
+    this->data=strcpy(this->data,str.data);
+    /*
     for(int i=0;i<str.length;i++){
         new_data[i]=str.data[i];
     }
-    this->data=new_data;
+     */
+    //this->data=new_data;
 
 
 }
@@ -38,11 +41,9 @@ String::String(const char *str) {
         return;
     }
     this->length=strlen(str);
-    char *new_data = new char[strlen(str)+1];
-    for(int i=0;i<strlen(str)+1;i++){
-        new_data[i]=str[i];
-    }
-    this->data=new_data;
+    data = new char[strlen(str)+1];
+   this->data=strcpy(data,str);
+
 
 }
 
@@ -52,11 +53,14 @@ String& String::operator=(const char *str) {
     }
     delete [] this->data;
     this->length=strlen(str);
-    char *new_data = new char[strlen(str)+1];
+    this->data = new char[strlen(str)+1];
+    this->data=strcpy(this->data,str);
+    /*
     for(int i=0;i<strlen(str);i++){
         new_data[i]=str[i];
     }
     this->data=new_data;
+     */
     return *this;
 
 }
@@ -113,18 +117,26 @@ void String::split(const char *delimiters, String **output,
     }
     /*calculate the how many times the sign appears*/
     size_t counter=0;
-    int last_index=0;
+
 
     char *copied_data = new char[this->length+1];
+    copied_data = strcpy(copied_data,this->data);
+    /*
     for(int i=0;i<this->length;i++){
         copied_data[i]=this->data[i];
     }
-    /*insert "." to simplify the task*/
+    */
+    bool is_delimiter[this->length];
+    for(int i=0;i< this->length;i++){
+        is_delimiter[i]= false;
+    }
+
+    /*sign in which indexes are delimiter*/
     for(int i=0;i<this->length;i++){
         for(int j =0;j<strlen(delimiters);j++){
             if(this->data[i]==delimiters[j]){
-                last_index=i;
-                copied_data[i]='.';
+
+                is_delimiter[i]= true;
             }
 
         }
@@ -134,12 +146,12 @@ void String::split(const char *delimiters, String **output,
 
     //count the num of strings
     for(int i=1;i<this->length;i++){
-        if((copied_data[i]=='.')&&(copied_data[i-1]!='.')){
+        if((is_delimiter[i]== true)&&(is_delimiter[i-1]== false)){
             counter++;
         }
     }
 
-    if(copied_data[this->length-1]!='.'){
+    if(is_delimiter[this->length-1]== false){
         counter++;
     }
 
@@ -165,11 +177,12 @@ void String::split(const char *delimiters, String **output,
     }
 
     //find the inits of the strings
-    if(copied_data[0]!='.'){
+  //  if(is_delimiter[0]== false)
+    if(is_delimiter[0]== false){
         strings_locations[0][0]=0;
         int loc_index=1;
         for(int i=1;i<this->length;i++){
-            if((copied_data[i]!='.')&&(copied_data[i-1]=='.')){
+            if((is_delimiter[i]==false)&&(is_delimiter[i-1]== true)){
                 strings_locations[loc_index][0]=i;
                 loc_index++;
             }
@@ -178,7 +191,7 @@ void String::split(const char *delimiters, String **output,
     else{
         int loc_index=0;
         for(int i=1;i<this->length;i++){
-            if((copied_data[i]!='.')&&(copied_data[i-1]=='.')){
+            if((is_delimiter[i]== false)&&(is_delimiter[i-1]== true)){
                 strings_locations[loc_index][0]=i;
                 loc_index++;
             }
@@ -189,13 +202,13 @@ void String::split(const char *delimiters, String **output,
 
         int loc_index=0;
         for(int i=0;i<length-1;i++){
-           if((copied_data[i]!='.')&&(copied_data[i+1]=='.')){
+           if((is_delimiter[i]== false)&&(is_delimiter[i+1]== true)){
                strings_locations[loc_index][1]=i;
                loc_index++;
            }
         }
         //check the last char, if smaller it means we missed the last char
-        if(loc_index<length-1){
+        if(loc_index<counter){
             strings_locations[counter-1][1]=length-1;
         }
 
@@ -220,38 +233,41 @@ void String::split(const char *delimiters, String **output,
 }
 
 int String::to_integer() const {
-    int outcome =0;
+    uint32_t integer =0;
     size_t strings_num=0;
     String* output;
     split(".",&output,&strings_num);
-    if(strings_num==NUM_IP_SEC){
 
-        int addition=0;
 
-        for(int i=0; i<strings_num;i++){
-            output[i].trim();
-            for(int j=0;j<output[i].length;j++){
-                addition+=output[i].data[j]*pow(10,output[i].length);
-            }
-            outcome|=addition<<(24-8*i);
-        }
-        delete[] output;
-        return outcome;
+
+    for(int i=0; i < strings_num ; i++ ){
+        output[i] = output[i].trim();
+        uint32_t temp = (uint32_t)stoi(output[i].data);
+        integer =+ temp<<(8*(strings_num - i - 1));
+
     }
-
-
-
-
-    delete [] output;
-    return 0;
-
+    delete[] output;
+    return integer;
 }
+
+
+
+
+
+
+
+
+
+
 
 String String::trim() const {
     if((this->data==NULL)||(this->length==0)){
         return *this;
     }
-    /*find the indexes where the string should begin\finish */
+
+
+
+    //find the indexes where the string should begin\finish
     int init_char=0;
     int last_char= this->length-1;
     bool found= false;
@@ -270,18 +286,17 @@ String String::trim() const {
             }
 
     }
-
-        /*in case that not change is needed*/
-        if(init_char>last_char){
+        //in case there are no space
+        if((init_char==0)&&(last_char==length-1)){
         return *this;
         }
+        //in case it is all spaces
+
         int new_len = last_char-init_char+1;
         char new_string[new_len+1];
+        strncpy(new_string,data+init_char,last_char-init_char+1);
+       // insert without the string
 
-        /*insert without the string*/
-        for(int i=init_char;i<=last_char;i++){
-            new_string[i-init_char]=data[i];
-        }
         return String(new_string);
 
 
