@@ -145,12 +145,15 @@ void String::split(const char *delimiters, String **output,
 
 
     String *new_out = new String[counter];
+    //*output =new String[counter];
     *size = counter;
+    /*
    for(int i=0;i<counter;i++){
-       String a;
-       *(new_out+i) = a;
+
+       *(new_out+i) =  String();
 
     }
+     */
   *output=new_out;
 
 
@@ -201,11 +204,12 @@ void String::split(const char *delimiters, String **output,
     /*create all other strings expect the last one*/
     for(int i=0;i<counter;i++){
         int word_len=strings_locations[i][1]-strings_locations[i][0]+1;
-        char tmp_string[word_len+1];
-
-        for(int j=strings_locations[i][0];j<=strings_locations[i][1];j++){
+        char tmp_string [word_len+1];
+        int j=strings_locations[i][0];
+        for(;j<=strings_locations[i][1];j++){
             tmp_string[j-strings_locations[i][0]]=this->data[j];
         }
+        tmp_string[j-strings_locations[i][0]]='\0';
         //tmp_string[word_len]= (char) '/0';
         String tmp(tmp_string);
         (*output)[i]=tmp;
