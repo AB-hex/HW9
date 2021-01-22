@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/intelFPGA_lite/MMt9/field.h
+string.h
+C:/intelFPGA_lite/MMt9/string.h
+
+C:/intelFPGA_lite/MMt9/ip.h
+field.h
+C:/intelFPGA_lite/MMt9/field.h
+
+C:/intelFPGA_lite/MMt9/main.cpp
+string.h
+C:/intelFPGA_lite/MMt9/string.h
+field.h
+C:/intelFPGA_lite/MMt9/field.h
+ip.h
+C:/intelFPGA_lite/MMt9/ip.h
+port.h
+C:/intelFPGA_lite/MMt9/port.h
+
+C:/intelFPGA_lite/MMt9/port.h
+string.h
+C:/intelFPGA_lite/MMt9/string.h
+field.h
+C:/intelFPGA_lite/MMt9/field.h
+
+C:/intelFPGA_lite/MMt9/string.h
+stddef.h
+-
+iostream
+-
+
