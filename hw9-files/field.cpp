@@ -76,8 +76,8 @@ bool Field::match(String packet) {
 
 
     this->pattern.split("=",&data_pattern,&pattern_cnt);
-    if(pattern_cnt != 2 ) {
-        if(pattern_cnt){
+    if(pattern_cnt !=2 ) {
+        if(!pattern_cnt){
             delete[] data_pattern;
         }
         return false;
