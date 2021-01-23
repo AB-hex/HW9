@@ -36,14 +36,9 @@ bool Ip::set_value(String val){
 	}
 
 	unsigned int mask = MAX_32_BITS<<(WORD_SIZE - maskLngth)  ;
-	this->low = ip&(mask);
-	unsigned not_mask=(1<<maskLngth)-1;
-	this->high = low|(not_mask);
-	/*
-	unsigned  mask = ((1<<maskLngth)-1)<<(WORD_SIZE-maskLngth);
-    this->low= ip&mask;
-    this->high=ip|(~mask);
-    */
+	this->low = ip & mask;
+	this->high = low|(~mask);
+
 	delete[] temp;
 	return true;
 

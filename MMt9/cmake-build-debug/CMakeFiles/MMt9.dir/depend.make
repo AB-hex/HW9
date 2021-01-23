@@ -13,6 +13,7 @@ CMakeFiles/MMt9.dir/ip.cpp.obj: ../ip.h
 CMakeFiles/MMt9.dir/ip.cpp.obj: ../string.h
 
 CMakeFiles/MMt9.dir/main.cpp.obj: ../field.h
+CMakeFiles/MMt9.dir/main.cpp.obj: ../input.h
 CMakeFiles/MMt9.dir/main.cpp.obj: ../ip.h
 CMakeFiles/MMt9.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/MMt9.dir/main.cpp.obj: ../port.h

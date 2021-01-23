@@ -1,4 +1,4 @@
-# Install script for directory: C:/intelFPGA_lite/MMt9
+# Install script for directory: E:/HW Technion Studies/semester 9/mamat/MMt9
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/intelFPGA_lite/MMt9/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/HW Technion Studies/semester 9/mamat/MMt9/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

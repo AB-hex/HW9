@@ -3,24 +3,37 @@
 #include "field.h"
 #include "ip.h"
 #include "port.h"
+#include "input.h"
+#include <iostream>
+#include <stdlib.h>
+#include <cstring>
 
-int main() {
-   // std::cout << "Hello, World!" << std::endl;
+#define ERROR 1
 
-    //String a("  169.5.19.4 ");
-    //String b=a.trim();
-    //bool g= a.equals("  169.5.19.4 ");
-    //size_t size =0;
-    //String *strings;
-    //a.split("/.",&strings,&size);
-    //unsigned ip=a.to_integer();
-    String my_string("src-ip=133.224.177.174/4");
-    Field field1(my_string);
-    Ip new_ip(my_string);
-    String test_str("133.224.177.174/8");
-    bool j =new_ip.set_value(test_str);
-    String packet_1("src-ip=133.145.84.201, dst-ip=189.112.138.228, src-port=53, dst-port=12106");
-    bool is_ok= new_ip.match(packet_1);
+int main(int argc,char **argv) {
+
+    String Ip_String(*argv);
+    Ip rule(Ip_String);
+    String *rule_format;
+    size_t size;
+    Ip_String.split("=",&rule_format,&size);
+    if(rule.set_value(rule_format[1])){
+        return ERROR;
+    }
+
+    char *input_line = (char*)malloc(strlen(rule_format[1].)+1);
+
+
+   while(std::cin){
+       std::cin.getline(input_line,  500);
+       String adress(input_line);
+       String *adressess;
+       adress.trim().split("=",&adressess,&size);
+       if(rule.match_value(adressess[1]) ){
+           std::cout<<input_line<<std::endl;
+       }
+   }
+
 
 
 

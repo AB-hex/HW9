@@ -6,31 +6,43 @@
 
 #IncludeRegexTransform: 
 
-C:/intelFPGA_lite/MMt9/field.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/field.h
 string.h
-C:/intelFPGA_lite/MMt9/string.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/string.h
 
-C:/intelFPGA_lite/MMt9/ip.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/input.h
 field.h
-C:/intelFPGA_lite/MMt9/field.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/field.h
 
-C:/intelFPGA_lite/MMt9/main.cpp
+E:/HW Technion Studies/semester 9/mamat/MMt9/ip.h
+field.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/field.h
+
+E:/HW Technion Studies/semester 9/mamat/MMt9/main.cpp
 string.h
-C:/intelFPGA_lite/MMt9/string.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/string.h
 field.h
-C:/intelFPGA_lite/MMt9/field.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/field.h
 ip.h
-C:/intelFPGA_lite/MMt9/ip.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/ip.h
 port.h
-C:/intelFPGA_lite/MMt9/port.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/port.h
+input.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/input.h
+iostream
+-
+stdlib.h
+-
+string
+-
 
-C:/intelFPGA_lite/MMt9/port.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/port.h
 string.h
-C:/intelFPGA_lite/MMt9/string.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/string.h
 field.h
-C:/intelFPGA_lite/MMt9/field.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/field.h
 
-C:/intelFPGA_lite/MMt9/string.h
+E:/HW Technion Studies/semester 9/mamat/MMt9/string.h
 stddef.h
 -
 iostream

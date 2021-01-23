@@ -53,19 +53,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.3\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2020.3\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\intelFPGA_lite\MMt9
+CMAKE_SOURCE_DIR = "E:\HW Technion Studies\semester 9\mamat\MMt9"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\intelFPGA_lite\MMt9\cmake-build-debug
+CMAKE_BINARY_DIR = "E:\HW Technion Studies\semester 9\mamat\MMt9\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MMt9.dir/depend.make
@@ -78,68 +78,68 @@ include CMakeFiles/MMt9.dir/flags.make
 
 CMakeFiles/MMt9.dir/main.cpp.obj: CMakeFiles/MMt9.dir/flags.make
 CMakeFiles/MMt9.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\intelFPGA_lite\MMt9\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MMt9.dir/main.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MMt9.dir\main.cpp.obj -c C:\intelFPGA_lite\MMt9\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\HW Technion Studies\semester 9\mamat\MMt9\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MMt9.dir/main.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MMt9.dir\main.cpp.obj -c "E:\HW Technion Studies\semester 9\mamat\MMt9\main.cpp"
 
 CMakeFiles/MMt9.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MMt9.dir/main.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\intelFPGA_lite\MMt9\main.cpp > CMakeFiles\MMt9.dir\main.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\HW Technion Studies\semester 9\mamat\MMt9\main.cpp" > CMakeFiles\MMt9.dir\main.cpp.i
 
 CMakeFiles/MMt9.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MMt9.dir/main.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\intelFPGA_lite\MMt9\main.cpp -o CMakeFiles\MMt9.dir\main.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\HW Technion Studies\semester 9\mamat\MMt9\main.cpp" -o CMakeFiles\MMt9.dir\main.cpp.s
 
 CMakeFiles/MMt9.dir/string.cpp.obj: CMakeFiles/MMt9.dir/flags.make
 CMakeFiles/MMt9.dir/string.cpp.obj: ../string.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\intelFPGA_lite\MMt9\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MMt9.dir/string.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MMt9.dir\string.cpp.obj -c C:\intelFPGA_lite\MMt9\string.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\HW Technion Studies\semester 9\mamat\MMt9\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MMt9.dir/string.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MMt9.dir\string.cpp.obj -c "E:\HW Technion Studies\semester 9\mamat\MMt9\string.cpp"
 
 CMakeFiles/MMt9.dir/string.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MMt9.dir/string.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\intelFPGA_lite\MMt9\string.cpp > CMakeFiles\MMt9.dir\string.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\HW Technion Studies\semester 9\mamat\MMt9\string.cpp" > CMakeFiles\MMt9.dir\string.cpp.i
 
 CMakeFiles/MMt9.dir/string.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MMt9.dir/string.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\intelFPGA_lite\MMt9\string.cpp -o CMakeFiles\MMt9.dir\string.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\HW Technion Studies\semester 9\mamat\MMt9\string.cpp" -o CMakeFiles\MMt9.dir\string.cpp.s
 
 CMakeFiles/MMt9.dir/field.cpp.obj: CMakeFiles/MMt9.dir/flags.make
 CMakeFiles/MMt9.dir/field.cpp.obj: ../field.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\intelFPGA_lite\MMt9\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MMt9.dir/field.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MMt9.dir\field.cpp.obj -c C:\intelFPGA_lite\MMt9\field.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\HW Technion Studies\semester 9\mamat\MMt9\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MMt9.dir/field.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MMt9.dir\field.cpp.obj -c "E:\HW Technion Studies\semester 9\mamat\MMt9\field.cpp"
 
 CMakeFiles/MMt9.dir/field.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MMt9.dir/field.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\intelFPGA_lite\MMt9\field.cpp > CMakeFiles\MMt9.dir\field.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\HW Technion Studies\semester 9\mamat\MMt9\field.cpp" > CMakeFiles\MMt9.dir\field.cpp.i
 
 CMakeFiles/MMt9.dir/field.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MMt9.dir/field.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\intelFPGA_lite\MMt9\field.cpp -o CMakeFiles\MMt9.dir\field.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\HW Technion Studies\semester 9\mamat\MMt9\field.cpp" -o CMakeFiles\MMt9.dir\field.cpp.s
 
 CMakeFiles/MMt9.dir/port.cpp.obj: CMakeFiles/MMt9.dir/flags.make
 CMakeFiles/MMt9.dir/port.cpp.obj: ../port.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\intelFPGA_lite\MMt9\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MMt9.dir/port.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MMt9.dir\port.cpp.obj -c C:\intelFPGA_lite\MMt9\port.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\HW Technion Studies\semester 9\mamat\MMt9\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MMt9.dir/port.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MMt9.dir\port.cpp.obj -c "E:\HW Technion Studies\semester 9\mamat\MMt9\port.cpp"
 
 CMakeFiles/MMt9.dir/port.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MMt9.dir/port.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\intelFPGA_lite\MMt9\port.cpp > CMakeFiles\MMt9.dir\port.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\HW Technion Studies\semester 9\mamat\MMt9\port.cpp" > CMakeFiles\MMt9.dir\port.cpp.i
 
 CMakeFiles/MMt9.dir/port.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MMt9.dir/port.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\intelFPGA_lite\MMt9\port.cpp -o CMakeFiles\MMt9.dir\port.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\HW Technion Studies\semester 9\mamat\MMt9\port.cpp" -o CMakeFiles\MMt9.dir\port.cpp.s
 
 CMakeFiles/MMt9.dir/ip.cpp.obj: CMakeFiles/MMt9.dir/flags.make
 CMakeFiles/MMt9.dir/ip.cpp.obj: ../ip.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\intelFPGA_lite\MMt9\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MMt9.dir/ip.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MMt9.dir\ip.cpp.obj -c C:\intelFPGA_lite\MMt9\ip.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\HW Technion Studies\semester 9\mamat\MMt9\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MMt9.dir/ip.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MMt9.dir\ip.cpp.obj -c "E:\HW Technion Studies\semester 9\mamat\MMt9\ip.cpp"
 
 CMakeFiles/MMt9.dir/ip.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MMt9.dir/ip.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\intelFPGA_lite\MMt9\ip.cpp > CMakeFiles\MMt9.dir\ip.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\HW Technion Studies\semester 9\mamat\MMt9\ip.cpp" > CMakeFiles\MMt9.dir\ip.cpp.i
 
 CMakeFiles/MMt9.dir/ip.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MMt9.dir/ip.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\intelFPGA_lite\MMt9\ip.cpp -o CMakeFiles\MMt9.dir\ip.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\HW Technion Studies\semester 9\mamat\MMt9\ip.cpp" -o CMakeFiles\MMt9.dir\ip.cpp.s
 
 # Object files for target MMt9
 MMt9_OBJECTS = \
@@ -161,7 +161,7 @@ MMt9.exe: CMakeFiles/MMt9.dir/build.make
 MMt9.exe: CMakeFiles/MMt9.dir/linklibs.rsp
 MMt9.exe: CMakeFiles/MMt9.dir/objects1.rsp
 MMt9.exe: CMakeFiles/MMt9.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\intelFPGA_lite\MMt9\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable MMt9.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="E:\HW Technion Studies\semester 9\mamat\MMt9\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable MMt9.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\MMt9.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -174,6 +174,6 @@ CMakeFiles/MMt9.dir/clean:
 .PHONY : CMakeFiles/MMt9.dir/clean
 
 CMakeFiles/MMt9.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\intelFPGA_lite\MMt9 C:\intelFPGA_lite\MMt9 C:\intelFPGA_lite\MMt9\cmake-build-debug C:\intelFPGA_lite\MMt9\cmake-build-debug C:\intelFPGA_lite\MMt9\cmake-build-debug\CMakeFiles\MMt9.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "E:\HW Technion Studies\semester 9\mamat\MMt9" "E:\HW Technion Studies\semester 9\mamat\MMt9" "E:\HW Technion Studies\semester 9\mamat\MMt9\cmake-build-debug" "E:\HW Technion Studies\semester 9\mamat\MMt9\cmake-build-debug" "E:\HW Technion Studies\semester 9\mamat\MMt9\cmake-build-debug\CMakeFiles\MMt9.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/MMt9.dir/depend
 
