@@ -21,19 +21,19 @@ int main(int argc,char **argv) {
         return ERROR;
     }
 
-    char *input_line = (char*)malloc(strlen(rule_format[1].)+1);
 
+    for(std::string line ; std::getline(std::cin, line);){
 
-   while(std::cin){
-       std::cin.getline(input_line,  500);
-       String adress(input_line);
-       String *adressess;
-       adress.trim().split("=",&adressess,&size);
-       if(rule.match_value(adressess[1]) ){
-           std::cout<<input_line<<std::endl;
+    String adress(line.c_str());
+    String *adressess;
+    adress.trim().split("=",&adressess,&size);
+    if(rule.match_value(adressess[1]) ){
+           std::cout << line << std::endl;
        }
-   }
 
+    }
+
+delete[] rule_format;
 
 
 

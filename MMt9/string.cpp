@@ -86,9 +86,9 @@ String& String::operator=(const String &rhs) {
 }
 
 bool String::equals(const String &rhs) const {
-    if(&rhs == NULL){
-        return false;
-    }
+    // if(&rhs == NULL){
+    //     return false;
+    // }
     int result = strcmp(rhs.data,this->data);
     if(result==0){
         return true;
@@ -126,13 +126,13 @@ void String::split(const char *delimiters, String **output,
     }
     */
     bool is_delimiter[this->length];
-    for(int i=0;i< this->length;i++){
+    for(int i=0;i < (int)this->length;i++){
         is_delimiter[i]= false;
     }
 
     /*sign in which indexes are delimiter*/
-    for(int i=0;i<this->length;i++){
-        for(int j =0;j<strlen(delimiters);j++){
+    for(int i=0;i<(int)this->length;i++){
+        for(int j =0;j<(int)strlen(delimiters);j++){
             if(this->data[i]==delimiters[j]){
 
                 is_delimiter[i]= true;
@@ -144,7 +144,7 @@ void String::split(const char *delimiters, String **output,
 
 
     //count the num of strings
-    for(int i=1;i<this->length;i++){
+    for(int i=1;i< (int)this->length ; i++){
         if((is_delimiter[i]== true)&&(is_delimiter[i-1]== false)){
             counter++;
         }
@@ -171,7 +171,7 @@ void String::split(const char *delimiters, String **output,
 
     /*array 2D, the 1sr coulum in the initial index, 2nd is the end*/
     int** strings_locations = new int*[counter];
-    for(int i=0;i<counter;i++){
+    for(int i=0;i<(int)counter;i++){
         strings_locations[i]=new int[2];
     }
 
@@ -180,7 +180,7 @@ void String::split(const char *delimiters, String **output,
     if(is_delimiter[0]== false){
         strings_locations[0][0]=0;
         int loc_index=1;
-        for(int i=1;i<this->length;i++){
+        for(int i=1;i<(int)this->length;i++){
             if((is_delimiter[i]==false)&&(is_delimiter[i-1]== true)){
                 strings_locations[loc_index][0]=i;
                 loc_index++;
@@ -189,7 +189,7 @@ void String::split(const char *delimiters, String **output,
     }
     else{
         int loc_index=0;
-        for(int i=1;i<this->length;i++){
+        for(int i=1;i<(int)this->length;i++){
             if((is_delimiter[i]== false)&&(is_delimiter[i-1]== true)){
                 strings_locations[loc_index][0]=i;
                 loc_index++;
@@ -200,21 +200,21 @@ void String::split(const char *delimiters, String **output,
         //find the ends of the strings
 
         int loc_index=0;
-        for(int i=0;i<length-1;i++){
+        for(int i=0;i<(int)length-1;i++){
            if((is_delimiter[i]== false)&&(is_delimiter[i+1]== true)){
                strings_locations[loc_index][1]=i;
                loc_index++;
            }
         }
         //check the last char, if smaller it means we missed the last char
-        if(loc_index<counter){
+        if(loc_index<(int)counter){
             strings_locations[counter-1][1]=length-1;
         }
 
 
 
     /*create all other strings expect the last one*/
-    for(int i=0;i<counter;i++){
+    for(int i=0;i<(int)counter;i++){
         int word_len=strings_locations[i][1]-strings_locations[i][0]+1;
         char tmp_string [word_len+1];
         int j=strings_locations[i][0];
@@ -239,7 +239,7 @@ int String::to_integer() const {
 
 
 
-    for(int i=0; i < strings_num ; i++ ){
+    for(int i=0; i < (int)strings_num ; i++ ){
         output[i] = output[i].trim();
         unsigned temp = (unsigned )stoi(output[i].data);
         integer += temp<<(8*(strings_num - i - 1));
@@ -270,7 +270,7 @@ String String::trim() const {
     int init_char=0;
     int last_char= this->length-1;
     bool found= false;
-    for(int i=0;(i<this->length)&&(found==false);i++) {
+    for(int i=0;(i<(int)this->length)&&(found==false);i++) {
         if (this->data[i] != ' ') {
             init_char = i;
             found = true;
@@ -286,7 +286,7 @@ String String::trim() const {
 
     }
         //in case there are no space
-        if((init_char==0)&&(last_char==length-1)){
+        if((init_char==0)&&(last_char==(int)length-1)){
         return *this;
         }
         //in case it is all spaces
