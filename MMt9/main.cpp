@@ -9,33 +9,99 @@
 #include <cstring>
 
 #define ERROR 1
+#define FORMAT 0
+#define RULE 1
+
 
 int main(int argc,char **argv) {
 
-    String Ip_String(*argv);
-    Ip rule(Ip_String);
+      if( check_args( argc, argv ) ) {
+        return ERROR;
+      }
+
+    String input(argv[1]);
+
     String *rule_format;
     size_t size;
-    Ip_String.split("=",&rule_format,&size);
-    if(rule.set_value(rule_format[1])){
-        return ERROR;
-    }
+
+    input.split("=",&rule_format,&size);
+    
+    String ip_dst("dst-ip");
+    String ip_src("src-ip");
+    String port_dst("dst-port");
+    String port_src("src-port");
+
+    input = input.trim();
+
+    if( ip_dst.trim().equals( rule_format[FORMAT].trim() ) ||
+         ip_src.trim().equals( rule_format[FORMAT].trim() ) ){
+        
+        Ip ip_rule(input);
+        ip_rule.set_value(rule_format[RULE]);
+        parse_input(ip_rule);
 
 
-    for(std::string line ; std::getline(std::cin, line);){
+      }
+      else if( port_dst.trim().equals( rule_format[FORMAT].trim() ) ||
+                 port_src.trim().equals( rule_format[FORMAT].trim())){
+  
+        
+        Port port_rule(input);
+        port_rule.set_value(rule_format[RULE]);
+        parse_input(port_rule);
+      }
 
-    String adress(line.c_str());
-    String *adressess;
-    adress.trim().split("=",&adressess,&size);
-    if(rule.match_value(adressess[1]) ){
-           std::cout << line << std::endl;
-       }
-
-    }
-
-delete[] rule_format;
-
+  delete[] rule_format;
 
 
-    return 0;
+
+  return 0;
 }
+  //    String *adressess;
+
+
+
+  //   if(kind==IP){
+
+  //   if(!ip_rule.set_value(rule_format[1])){
+  //       return ERROR;
+  //   }
+
+    
+
+  //   for(std::string line ; std::getline(std::cin, line);){
+
+  //       String adress(line.c_str());
+
+  //       adress.trim().split("=",&adressess,&size);
+  //       if(ip_rule.match_value(adressess[1]) ){
+  //              std::cout << line << std::endl;
+  //          }
+
+    
+  //       }
+
+  //   }
+
+
+
+  //   if(kind==PORT){
+  //     if(!port_rule.set_value(rule_format[1])){
+  //       return ERROR;
+  //   }
+
+   
+  //   for(std::string line ; std::getline(std::cin, line);){
+
+  //   String adress(line.c_str());
+
+  //   adress.trim().split("=",&adressess,&size);
+  //   if(port_rule.match_value(adressess[1]) ){
+  //          std::cout << line << std::endl;
+  //      }
+
+  //   }
+  // }
+
+  // delete[] adressess;
+

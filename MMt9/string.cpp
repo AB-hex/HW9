@@ -19,18 +19,12 @@ String::~String(){
 }
 
 String::String(const String &str) {
-    if((str.length==0)||(str.data== nullptr)){
+    if( ( str.length==0 )||( str.data == nullptr) ){
         return;
     }
     this->length=str.length;
     this->data = new char[strlen(str.data)+1];
     this->data=strcpy(this->data,str.data);
-    /*
-    for(int i=0;i<str.length;i++){
-        new_data[i]=str.data[i];
-    }
-     */
-    //this->data=new_data;
 
 
 }
@@ -111,15 +105,17 @@ bool String::equals(const char *rhs) const {
 
 void String::split(const char *delimiters, String **output,
                    size_t *size) const {
+
     if((delimiters== nullptr)||(output== nullptr)||(size== nullptr)){
+        *size = 2;
         return;
     }
     /*calculate the how many times the sign appears*/
     size_t counter=0;
 
 
-    char *copied_data = new char[this->length+1];
-    copied_data = strcpy(copied_data,this->data);
+    // char *copied_data = new char[this->length+1];
+    // copied_data = strcpy(copied_data,this->data);
     /*
     for(int i=0;i<this->length;i++){
         copied_data[i]=this->data[i];
@@ -226,7 +222,13 @@ void String::split(const char *delimiters, String **output,
         String tmp(tmp_string);
         (*output)[i]=tmp;
     }
+    for(int i=0; i< (int)counter ; i++){
 
+    delete[] strings_locations[i]; 
+
+    }
+
+    delete[] strings_locations; 
 
 
 }
