@@ -10,15 +10,14 @@
 
 
 using namespace std;
-/*default constructor*/
+
 String::String():data(nullptr),length(0) {
 
 }
-/*destructor*/
 String::~String(){
     delete[] this->data;
 }
-/*copy constructor*/
+
 String::String(const String &str) {
     if( ( str.length==0 )||( str.data == nullptr) ){
         return;

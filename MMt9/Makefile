@@ -1,27 +1,18 @@
 
-TARGET_LIB = firewall
-TARGET_APP = firewall.exe
-OTHER_LIB = input
 
-LIB_SRCS = string.cpp field.cpp ip.cpp port.cpp  # library source files
-APP_SRCS = main.cpp # app source files
-
-CXX = g++  # C compiler
-CXXFLAGS = -Wall -Wextra -L. -g #-O2 -g  # C flags
-LDFLAGS = -fPIC -shared # linking flags
-RM = rm -f   # rm command
-
-## g++ -Wall -Wextra -L. -g -fPIC -shared string.cpp field.cpp ip.cpp port.cpp -o firewall.so
-## g++ -Wall -Wextra -L. -g main.cpp -o firewall.exe -l firewall -l input
-all:${TARGET_APP}
-
-$(TARGET_LIB):
-	$(CXX) ${CXXFLAGS} ${LDFLAGS} ${LIB_SRCS} -o   lib${TARGET_LIB}.so
+CXX = g++  
+CXXFLAGS = -Wall -Wextra -L. -g -std=c++11
 
 
-${TARGET_APP}: ${TARGET_LIB} 
-	$(CXX) ${CXXFLAGS} ${APP_SRCS} -o ${TARGET_APP} -l$(TARGET_LIB) -l$(OTHER_LIB)
+all: firewall.exe
+
+firewall:
+	$(CXX) ${CXXFLAGS} -fPIC -shared string.cpp field.cpp ip.cpp port.cpp -o   libfirewall.so
+
+
+firewall.exe: firewall 
+	$(CXX) ${CXXFLAGS} main.cpp -o firewall.exe -l firewall -l input
 
 
 clean:
-	-${RM} ${TARGET_LIB} ${TARGET_APP}
+	-rm -f firewall firewall.exe

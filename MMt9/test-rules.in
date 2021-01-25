@@ -1,0 +1,3 @@
+# This is a comment, you should ignore it
+# The firewall should allow all rules that appear in this ruleset
+src-ip= 255.174.107.144/0 ,dst-ip  =191.91.51.33/0,src-port=25-255,dst-port=0-65535 # Comments can appear at the end of the lines
