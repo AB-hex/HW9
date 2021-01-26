@@ -1,6 +1,4 @@
-//
-// Created by איתן on 1/18/2021.
-//
+
 #include "string.h"
 #include "iostream"
 #include <cstring>
@@ -52,7 +50,9 @@ String::String(const char *str) {
 
 }
 /**
- *assignment operator
+ * assignment operator
+ * param str char* that inserted
+ 
 */
 String& String::operator=(const char *str) {
     if((strlen(str)==0)||(str== nullptr)){
@@ -62,16 +62,15 @@ String& String::operator=(const char *str) {
     this->length=strlen(str);
     this->data = new char[strlen(str)+1];
     this->data=strcpy(this->data,str);
-    /*
-    for(int i=0;i<strlen(str);i++){
-        new_data[i]=str[i];
-    }
-    this->data=new_data;
-     */
+   
     return *this;
 
 }
-
+/**
+ * assignment operator
+ * param str String that inserted
+ 
+*/
 String& String::operator=(const String &rhs) {
     if(this==&rhs){
         return *this;
@@ -92,6 +91,8 @@ String& String::operator=(const String &rhs) {
     return *this;
 
 }
+/**
+*/
 
 bool String::equals(const String &rhs) const {
     // if(&rhs == NULL){
