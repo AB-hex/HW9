@@ -52,8 +52,7 @@ String::String(const char *str) {
 /**
  * assignment operator
  * param str char* that inserted
- 
-*/
+ */
 String& String::operator=(const char *str) {
     if((strlen(str)==0)||(str== nullptr)){
         return *this;
@@ -69,8 +68,7 @@ String& String::operator=(const char *str) {
 /**
  * assignment operator
  * param str String that inserted
- 
-*/
+ */
 String& String::operator=(const String &rhs) {
     if(this==&rhs){
         return *this;
@@ -92,7 +90,9 @@ String& String::operator=(const String &rhs) {
 
 }
 /**
-*/
+ * compare the date of the String with another
+ *param rhs the other String
+ */
 
 bool String::equals(const String &rhs) const {
     // if(&rhs == NULL){
@@ -104,6 +104,11 @@ bool String::equals(const String &rhs) const {
     }
     return false;
 }
+/**
+ * compare the date of the String with another
+ *param rhs the other String (char*)
+ */
+
 
 bool String::equals(const char *rhs) const {
     if(rhs== nullptr){
@@ -117,7 +122,12 @@ bool String::equals(const char *rhs) const {
     }
     return false;
 }
-
+/**
+ * split the String by given delimiters and insert them in array of Strings
+ * @param delimiters the array of the delimiters
+ * @param output pointer to insert the sub strings that were spiled
+ * @param size pointer to insert the number of the sub strings
+*/
 void String::split(const char *delimiters, String **output,
                    size_t *size) const {
 
@@ -125,23 +135,17 @@ void String::split(const char *delimiters, String **output,
         *size = 2;
         return;
     }
-    /*calculate the how many times the sign appears*/
+   
     size_t counter=0;
 
 
-    // char *copied_data = new char[this->length+1];
-    // copied_data = strcpy(copied_data,this->data);
-    /*
-    for(int i=0;i<this->length;i++){
-        copied_data[i]=this->data[i];
-    }
-    */
+    /* create an array of the loactions of the delimiters */
     bool is_delimiter[this->length];
     for(int i=0;i < (int)this->length;i++){
         is_delimiter[i]= false;
     }
 
-    /*sign in which indexes are delimiter*/
+   
     for(int i=0;i<(int)this->length;i++){
         for(int j =0;j<(int)strlen(delimiters);j++){
             if(this->data[i]==delimiters[j]){
@@ -154,7 +158,7 @@ void String::split(const char *delimiters, String **output,
 
 
 
-    //count the num of strings
+    /*count the num of sub strings*/
     for(int i=1;i< (int)this->length ; i++){
         if((is_delimiter[i]== true)&&(is_delimiter[i-1]== false)){
             counter++;
@@ -180,14 +184,16 @@ void String::split(const char *delimiters, String **output,
 
 
 
-    /*array 2D, the 1sr coulum in the initial index, 2nd is the end*/
+    /*array 2D of the locations of tne sub strings,
+    the 1sr coulum in the initial index, 2nd is the end*/
+    
     int** strings_locations = new int*[counter];
     for(int i=0;i<(int)counter;i++){
         strings_locations[i]=new int[2];
     }
 
-    //find the inits of the strings
-  //  if(is_delimiter[0]== false)
+    /*find the inits of the strings*/
+
     if(is_delimiter[0]== false){
         strings_locations[0][0]=0;
         int loc_index=1;
@@ -208,7 +214,7 @@ void String::split(const char *delimiters, String **output,
         }
 
         }
-        //find the ends of the strings
+        /*find the ends of the strings*/
 
         int loc_index=0;
         for(int i=0;i<(int)length-1;i++){
@@ -217,14 +223,14 @@ void String::split(const char *delimiters, String **output,
                loc_index++;
            }
         }
-        //check the last char, if smaller it means we missed the last char
+        /*check the last char, if smaller it means we missed the last char*/
         if(loc_index<(int)counter){
             strings_locations[counter-1][1]=length-1;
         }
 
 
 
-    /*create all other strings expect the last one*/
+    /*create all other strings and insert into output*/
     for(int i=0;i<(int)counter;i++){
         int word_len=strings_locations[i][1]-strings_locations[i][0]+1;
         char tmp_string [word_len+1];
@@ -247,7 +253,9 @@ void String::split(const char *delimiters, String **output,
 
 
 }
-
+/**
+ * calculate from an address an integer
+*/
 int String::to_integer() const {
     unsigned integer =0;
     size_t strings_num=0;
@@ -274,7 +282,9 @@ int String::to_integer() const {
 
 
 
-
+/**
+ * omit the spaces in the beginning and the end of the string
+*/
 
 String String::trim() const {
     if((this->data==NULL)||(this->length==0)){
