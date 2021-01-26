@@ -10,14 +10,23 @@
 
 
 using namespace std;
+/**
+ * default constructor
+*/
 
 String::String():data(nullptr),length(0) {
 
 }
+/**
+ * destrucotor
+*/
 String::~String(){
     delete[] this->data;
 }
-
+/**
+ * copy constructor from another String
+ * param str the copied object
+*/
 String::String(const String &str) {
     if( ( str.length==0 )||( str.data == nullptr) ){
         return;
@@ -28,7 +37,10 @@ String::String(const String &str) {
 
 
 }
-
+/**
+ * Copy constructor from another char*
+ * param str the string that we insert to our object
+*/
 String::String(const char *str) {
     if((strlen(str)==0)||(str== nullptr)){
         return;
