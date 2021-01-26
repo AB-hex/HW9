@@ -10,7 +10,7 @@
 Ip::Ip(String pattern):Field(pattern,IP) {}
 
 bool Ip::set_value(String val){
-///exmp: val = XXX.XXX.XXX.XXX/8
+	/*temp will hold array of String with ip and bits we need mask*/
 	String* temp;
 	size_t numOfStirngs=0;
 
@@ -26,9 +26,9 @@ bool Ip::set_value(String val){
 		return false;
 	}
 
-	
+	/*ip store the ip value we wish to mask our bits*/
 	int ip = temp[0].to_integer();
-	int maskLngth = temp[1].to_integer(); //num of MSB bits mask
+	int maskLngth = temp[1].to_integer(); //num of MSB bits mask for ip
 
 	if(maskLngth < 0 || maskLngth > WORD_SIZE ){
 		delete[] temp;
@@ -46,7 +46,6 @@ bool Ip::set_value(String val){
 
 
 bool Ip::match_value(String val) const {
-///exmp: val = XXX.XXX.XXX.XXX
     unsigned int ip = val.to_integer();
     if(ip < (this->low) || ip > (this->high)) {
         return false;
