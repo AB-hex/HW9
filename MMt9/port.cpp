@@ -10,12 +10,12 @@
 
 
 Port::Port(String pattern):Field(pattern,PORT){}
-
+/*valid arg for set_value is "PORT1-PORT2, is splitted by delimerter '-' and then converted to interger and stored in their sturct variables low and high
+valid tests make sure that PORT1 smaller than PORT2 and split value retuned size is 2 */
 bool Port::set_value(String val){
-///example val = PRT1-PRT2
 	String *temp;
 	size_t size = 0;
-
+	
 	val.split("-", &temp, &size);
 	if(size != 2){
 		if( !size ){
@@ -41,10 +41,9 @@ bool Port::set_value(String val){
 
 	return true;
 }
-
+/*valid arg for match value is PORT  */
 
 bool Port::match_value(String val) const {
-    ///exmple val = port
     int port = val.to_integer();
     return ( ( this->range[START]) <= port)
                  && (port <= (this->range[END]) );
