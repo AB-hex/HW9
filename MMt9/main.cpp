@@ -32,7 +32,7 @@ int main(int argc,char **argv) {
     String port_src("src-port");
 
     input = input.trim();
-
+     /** chek if it's a rule of ip or port*/
     if( ip_dst.trim().equals( rule_format[FORMAT].trim() ) ||
          ip_src.trim().equals( rule_format[FORMAT].trim() ) ){
         
@@ -57,51 +57,4 @@ int main(int argc,char **argv) {
 
   return 0;
 }
-  //    String *adressess;
-
-
-
-  //   if(kind==IP){
-
-  //   if(!ip_rule.set_value(rule_format[1])){
-  //       return ERROR;
-  //   }
-
-    
-
-  //   for(std::string line ; std::getline(std::cin, line);){
-
-  //       String adress(line.c_str());
-
-  //       adress.trim().split("=",&adressess,&size);
-  //       if(ip_rule.match_value(adressess[1]) ){
-  //              std::cout << line << std::endl;
-  //          }
-
-    
-  //       }
-
-  //   }
-
-
-
-  //   if(kind==PORT){
-  //     if(!port_rule.set_value(rule_format[1])){
-  //       return ERROR;
-  //   }
-
-   
-  //   for(std::string line ; std::getline(std::cin, line);){
-
-  //   String adress(line.c_str());
-
-  //   adress.trim().split("=",&adressess,&size);
-  //   if(port_rule.match_value(adressess[1]) ){
-  //          std::cout << line << std::endl;
-  //      }
-
-  //   }
-  // }
-
-  // delete[] adressess;
-
+  
