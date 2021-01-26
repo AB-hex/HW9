@@ -51,7 +51,9 @@ String::String(const char *str) {
 
 
 }
-
+/**
+ *assignment operator
+*/
 String& String::operator=(const char *str) {
     if((strlen(str)==0)||(str== nullptr)){
         return *this;
