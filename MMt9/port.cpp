@@ -10,8 +10,11 @@
 
 
 Port::Port(String pattern):Field(pattern,PORT){}
-/*valid arg for set_value is "PORT1-PORT2, is splitted by delimerter '-' and then converted to interger and stored in their sturct variables low and high
-valid tests make sure that PORT1 smaller than PORT2 and split value retuned size is 2 */
+/*valid arg for set_value is "PORT1-PORT2, is splitted by 
+delimerter '-' and then converted to interger and stored 
+in their sturct variables low and high
+valid tests make sure that PORT1 smaller than PORT2 
+and split value retuned size is 2 */
 bool Port::set_value(String val){
 	String *temp;
 	size_t size = 0;

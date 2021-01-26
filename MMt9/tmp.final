@@ -1,0 +1,6 @@
+src-ip=248.3.249.77,dst-ip=185.190.142.133,src-port=53,dst-port=60143
+src-ip=251.117.126.87,dst-ip=185.106.148.74,src-port=25,dst-port=32239
+src-ip=253.145.84.201,dst-ip=189.112.138.228,src-port=53,dst-port=7339
+src-ip=254.78.247.77,dst-ip=191.239.80.24,src-port=123,dst-port=599
+src-ip=255.174.107.144,dst-ip=191.91.51.33,src-port=25,dst-port=65005
+src-ip=255.174.107.144,dst-ip=191.91.51.33,src-port=25,dst-port=8182
