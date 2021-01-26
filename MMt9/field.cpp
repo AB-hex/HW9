@@ -12,19 +12,14 @@
 
 
 Field::Field(String pattern) {
-///Example = src-ip=XXX.XXX.XXX.XXX/8
-///or dst-port=PRT1-PRT2
 	this->pattern = pattern;
 	this->type = GENERIC;
-
 }
 
+
 Field::Field (String pattern, field_type type){
-    ///Example = src-ip=XXX.XXX.XXX.XXX/8
-    ///or val = dst-port=PRT1-PRT2
 	this->pattern = pattern;
 	this->type = type;
-
 }
 
 
@@ -37,8 +32,6 @@ field_type Field::get_type() const {
 
 
 bool Field::set_value(String val){
-///exmp: val = XXX.XXX.XXX.XXX/8
-///or val = PRT1-PRT2
 	if(this->get_type() == IP){
 		return ((Ip*)this)->set_value(val);
 	}
@@ -47,6 +40,7 @@ bool Field::set_value(String val){
 	}
 	return false;
 }
+
 
 bool Field::match_value(String val) const {
     ///exmp: val = XXX.XXX.XXX.XXX
@@ -62,15 +56,8 @@ bool Field::match_value(String val) const {
 }
 
 
-
 bool Field::match(String packet) {
 
-    ///example packet =
-    /// src-ip=XXX.XXX.XXX.XXX,dst-ip=YYY.YYY.YYY.YYY,src-port=PRT,dst-port=PRT
-
-
-    ////data_rule[FORMAT] = src-ip - will use it for know looking packet is src or dst
-    /// data_rule[DATA] = XXX.XXX.XXX.XXX/3
     String* data_rule;
     size_t pattern_cnt = 0;
 
@@ -83,14 +70,8 @@ bool Field::match(String packet) {
         return false;
     }
 
-
-
     data_rule[FORMAT] = data_rule[FORMAT].trim();
 
-
-///example addresses[i] =  src-ip=XXX.XXX.XXX.XXX
-/// dst-ip=YYY.YYY.YYY.YYY
-/// src-port=PRT etc..
     String* addresses;
     size_t addresses_cnt = 0;
     packet.split(",", &addresses, &addresses_cnt);
@@ -102,12 +83,6 @@ bool Field::match(String packet) {
         return false;
     }
 
-
-
-
-
-////data_address[0] = src-ip
-/// data_address[1] = XXX.XXX.XXX.XXX
     String* data_address;
     size_t data_cnt=0;
     bool result = false;
