@@ -32,6 +32,7 @@ field_type Field::get_type() const {
 
 
 bool Field::set_value(String val){
+	
 	if(this->get_type() == IP){
 		return ((Ip*)this)->set_value(val);
 	}
@@ -43,8 +44,6 @@ bool Field::set_value(String val){
 
 
 bool Field::match_value(String val) const {
-    ///exmp: val = XXX.XXX.XXX.XXX
-    ///or val = PRT1
 
     if(this->get_type() == IP){
         return ((Ip*)this)->match_value(val);
@@ -55,12 +54,12 @@ bool Field::match_value(String val) const {
     return false;
 }
 
-
+/*packet is splitteted to 4 types of String and then compared 
+to the pattern method of the struct and then call the test_match*/
 bool Field::match(String packet) {
 
     String* data_rule;
     size_t pattern_cnt = 0;
-
 
     this->pattern.split("=", &data_rule, &pattern_cnt);
     if(pattern_cnt !=2 ) {
