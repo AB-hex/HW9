@@ -23,7 +23,7 @@ String::~String(){
 }
 /**
  * copy constructor from another String
- * param str the copied object
+ * @param str the copied object
 */
 String::String(const String &str) {
     if( ( str.length==0 )||( str.data == nullptr) ){
@@ -37,7 +37,7 @@ String::String(const String &str) {
 }
 /**
  * Copy constructor from another char*
- * param str the string that we insert to our object
+ * @param str the string that we insert to our object
 */
 String::String(const char *str) {
     if((strlen(str)==0)||(str== nullptr)){
@@ -51,7 +51,7 @@ String::String(const char *str) {
 }
 /**
  * assignment operator
- * param str char* that inserted
+ * @param str char* that inserted
  */
 String& String::operator=(const char *str) {
     if((strlen(str)==0)||(str== nullptr)){
@@ -67,7 +67,7 @@ String& String::operator=(const char *str) {
 }
 /**
  * assignment operator
- * param str String that inserted
+ * @param str String that inserted
  */
 String& String::operator=(const String &rhs) {
     if(this==&rhs){
@@ -91,7 +91,7 @@ String& String::operator=(const String &rhs) {
 }
 /**
  * compare the date of the String with another
- *param rhs the other String
+ * @param rhs the other String
  */
 
 bool String::equals(const String &rhs) const {
@@ -106,7 +106,7 @@ bool String::equals(const String &rhs) const {
 }
 /**
  * compare the date of the String with another
- *param rhs the other String (char*)
+ * @param rhs the other String (char*)
  */
 
 
